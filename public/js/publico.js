@@ -11,6 +11,9 @@ const lblEscritorio4 = document.querySelector("#lblEscritorio4");
 const socket = io();
 
 socket.on("estado-actual", (payload) => {
+  const audio = new Audio('./audio/new-ticket.mp3');
+  audio.play();
+
   const [tiket1, tiket2, tiket3, tiket4] = payload;
   if (tiket1) {
     lblTicket1.innerText = "Tiket " + tiket1.numero;
